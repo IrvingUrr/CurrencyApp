@@ -1,0 +1,46 @@
+
+<table style="width:50%">
+    <tr>
+      <th>Currency</th>
+      <th>Buy</th>
+      <th>Sell</th>
+    </tr>
+    <tr *ngIf="exchangeRateUSD$ | async as exchangeRateUSD">
+      <td>USD</td>
+      <td>
+        <span *ngIf="exchangeRateUSD.exchangeRate">
+          {{exchangeRateUSD.exchangeRate?.buy}}
+        </span>
+        <span class="text-danger" *ngIf="exchangeRateUSD.error">
+          {{exchangeRateUSD.error}}
+        </span>
+      </td>
+      <td>
+        <span *ngIf="exchangeRateUSD.exchangeRate">
+          {{exchangeRateUSD.exchangeRate?.sell}}
+        </span>
+        <span class="text-danger" *ngIf="exchangeRateUSD.error">
+          {{exchangeRateUSD.error}}
+        </span>
+      </td>
+    </tr>
+    <tr *ngIf="exchangeRateBRL$ | async as exchangeRateBRL">
+      <td>BRL</td>
+      <td>
+        <span *ngIf="exchangeRateBRL.exchangeRate">
+          {{exchangeRateBRL.exchangeRate?.buy}}
+        </span>
+        <span class="text-danger" *ngIf="exchangeRateBRL.error">
+          {{exchangeRateBRL.error}}
+        </span>
+      </td>
+      <td>
+        <span *ngIf="exchangeRateBRL.exchangeRate">
+          {{exchangeRateBRL.exchangeRate?.sell}}
+        </span>
+        <span class="text-danger" *ngIf="exchangeRateBRL.error">
+          {{exchangeRateBRL.error}}
+        </span>
+      </td>
+    </tr>
+</table>
